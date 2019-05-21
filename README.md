@@ -1,5 +1,8 @@
 ELK接收Paloalto日志并用钉钉告警.
 
+详情见：
+https://www.freebuf.com/articles/others-articles/161905.html
+
 运行命令：
 ./elasticsearch-5.5.2/bin/elasticsearch &
 
