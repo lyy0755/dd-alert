@@ -1,0 +1,42 @@
+name: IPS安全告警
+
+#唯一值重复告警规则type: cardinality
+
+#es_host: localhost
+
+#es_port: 9200
+
+# Index to search, wildcard supported
+
+index: syslog
+
+cardinality_field: Source-address.keyword
+
+#最小5次触发规则min_cardinality: 5
+
+#max_cardinality: 5
+
+# 60秒内
+
+timeframe: seconds: 60
+
+#5分钟内重复告警不告警realert: minutes: 30
+
+# ES 查询，用以过滤
+
+#filter:
+
+#- term:
+
+# Severity: "high"
+
+# (Required)
+
+# The alert is use when a match is found
+
+alert:
+
+*   "debug"#你自己定义的钉钉告警脚本
+*   "elastalert_modules.dingtalk_alert.DingTalkAlerter"
+
+dingtalk_webhook: 在钉钉群中添加机器人可以获取dingtalk_msgtype: "text"
